@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  groceryapi:
+    image: ${DOCKER_REGISTRY}groceryapi
+    build:
+      context: .
+      dockerfile: GroceryAPI\Dockerfile
