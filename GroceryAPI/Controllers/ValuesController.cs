@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using GroceryAPI.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace GroceryAPI.Controllers
 {
@@ -10,11 +8,23 @@ namespace GroceryAPI.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        private readonly IGroceryRepository _groceryrepo;
+
+        public ValuesController(IGroceryRepository groceryrepo)
         {
-            return new string[] { "value1", "value2" };
+            _groceryrepo = groceryrepo;
+        }
+        // GET api/values
+
+
+        [HttpGet]
+        public async Task<IActionResult> GetApiJson()
+        {
+            //var jsonresponse = _groceryrepo.GetAllItems();
+            var jsonresponse = await _groceryrepo.GetAllItems();
+
+
+            return Ok(jsonresponse);
         }
 
         // GET api/values/5

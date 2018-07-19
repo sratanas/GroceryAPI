@@ -1,8 +1,22 @@
 version: '3.4'
 
 services:
+  grocerysqlserver:
+    image: sratanas/grocerydatabase
+    container_name: grocerydb
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: ${SA_PASSWORD}
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Developer
+
+
   groceryapi:
-    image: ${DOCKER_REGISTRY}groceryapi
+    image: sratanas/groceryapi:latest
+    depends_on:
+      - grocerysqlserver
+    container_name: grocery_api
     build:
       context: .
       dockerfile: GroceryAPI\Dockerfile

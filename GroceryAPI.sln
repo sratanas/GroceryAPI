@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroceryAPI", "GroceryAPI\GroceryAPI.csproj", "{3FB3E610-CDED-436D-B535-54AA5B51FBCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroceryAPI", "GroceryAPI\GroceryAPI.csproj", "{3FB3E610-CDED-436D-B535-54AA5B51FBCA}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{1B39FB0B-F96D-4C18-8830-C93EFC60F07E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F45893EF-9189-45DB-83B2-449382ED3713}"
 	ProjectSection(SolutionItems) = preProject
+		.env = .env
 		.gitignore = .gitignore
+		CreateTables.sql = CreateTables.sql
 	EndProjectSection
 EndProject
 Global
